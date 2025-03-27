@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Blumen - Tu lugar para hospedarte</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        
+        <!-- Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="https://i.postimg.cc/rskt76HR/blumen-mobile.png" alt="Blumen Logo">
+                </div>
+                <!-- Removed nav-links -->
+                <button class="app-button" onclick="window.open('https://direct-book.com/properties/blumenhotelspadirect', '_blank')">
+                    Reservar
+                    <i class="fa-solid fa-bell-concierge"></i>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1>Explora tu lugar <br>para hospedarte</h1>
+
+            <!-- Search Form -->
+            <div class="search-form">
+                <div class="search-container">
+                    <div class="search-input">
+                        <i class="fas fa-tag"></i>
+                        <input type="text" placeholder="Código descuento">
+                    </div>
+                    <div class="search-input">
+                        <i class="fas fa-calendar"></i>
+                        <input type="text" placeholder="Check in" id="checkin" readonly>
+                    </div>
+                    <div class="search-input">
+                        <i class="fas fa-calendar"></i>
+                        <input type="text" placeholder="Check out" id="checkout" readonly>
+                    </div>
+                    <div class="search-actions">
+                        <div class="search-input guest-dropdown-container">
+                            <i class="fas fa-users"></i>
+                            <input type="text" readonly placeholder="Huéspedes" id="guestSummary">
+                            <div class="guest-dropdown">
+                                <div class="guest-type">
+                                    <span>Adultos</span>
+                                    <div class="counter">
+                                        <button class="counter-btn minus" data-type="adults">-</button>
+                                        <span class="count" id="adultsCount">2</span>
+                                        <button class="counter-btn plus" data-type="adults">+</button>
+                                    </div>
+                                </div>
+                                <div class="guest-type">
+                                    <span>Niños (2-12 años)</span>
+                                    <div class="counter">
+                                        <button class="counter-btn minus" data-type="children">-</button>
+                                        <span class="count" id="childrenCount">0</span>
+                                        <button class="counter-btn plus" data-type="children">+</button>
+                                    </div>
+                                </div>
+                                <div class="guest-type">
+                                    <span>Bebés (0-2 años)</span>
+                                    <div class="counter">
+                                        <button class="counter-btn minus" data-type="babies">-</button>
+                                        <span class="count" id="babiesCount">0</span>
+                                        <button class="counter-btn plus" data-type="babies">+</button>
+                                    </div>
+                                </div>
+                                <button class="apply-btn">Aplicar</button>
+                            </div>
+                        </div>
+                        <button class="search-button" id="searchButton">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Nuevo: Botón Explore More -->
+        <a href="#highlights" class="explore-more" id="exploreMoreBtn">
+            <span>Explore más</span>
+            <div class="arrow-down">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
+    </div>
+    <!-- Sección de Destacados con Fotos -->
+    <div class="highlights-section" id="highlights">
+        <div class="container">
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <img src="https://i.ibb.co/20cxz1L8/BTZ4.jpg" alt="Entorno" class="highlight-image">
+                    <div class="highlight-overlay">
+                        <h3 class="highlight-title">Entorno</h3>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="https://i.ibb.co/zhZ6Npmn/DSC-0153.jpg" alt="Habitaciones" class="highlight-image">
+                    <div class="highlight-overlay">
+                        <h3 class="highlight-title">Habitaciones</h3>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="https://i.ibb.co/mrjKH1kb/DSC-0077-2.jpg" alt="Café" class="highlight-image">
+                    <div class="highlight-overlay">
+                        <h3 class="highlight-title">Café</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section stays in third position -->
+    <div class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Vea todo</h3>
+                    <p>Desde habitaciones estándar hasta suites de lujo, descubra nuestras 12 habitaciones únicas diseñadas para su confort.</p>
+                </div>
+                <div class="feature">
+                    <h3>Compare aquí mismo</h3>
+                    <p>No necesita buscar en otro lugar. Las mejores tarifas y opciones están disponibles directamente en nuestra web.</p>
+                </div>
+                <div class="feature">
+                    <h3>Obtenga tarifas exclusivas</h3>
+                    <p>Tenemos ofertas especiales para nuestros huéspedes. Reserve directamente y ahorre en su estancia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rooms Section moved up -->
+    <div class="rooms-section" id="rooms-section">
+        <div class="container">
+            <h2 class="section-title">Habitaciones en Blumen</h2>
+            
+            <div class="carousel-header">
+                <h3>Nuestras habitaciones</h3>
+                <div class="carousel-controls">
+                    <button id="prevBtn" class="carousel-control"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextBtn" class="carousel-control"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+    
+            <div class="carousel-container">
+                <div class="carousel" id="roomsCarousel">
+                    <!-- Rooms will be added here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots">
+                <!-- Dots will be added here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Section moved down to fifth position -->
+    <div class="info-section" id="info-section">
+        <div class="container">
+            <div class="info-content">
+                <div class="info-text">
+                    <h2>Ofrecemos una variedad de las mejores habitaciones para aquellos que buscan confort y elegancia.</h2>
+                    <p>No te preocupes por la calidad del servicio, en Blumen Hotel la excelencia es nuestra prioridad.</p>
+                </div>
+                <div class="info-map" id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer remains at the bottom -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://i.postimg.cc/rskt76HR/blumen-mobile.png" alt="Blumen Logo" class="footer-logo">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h4>Información</h4>
+                    <a href="#">Carreras</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">Merchandising</a>
+                    <a href="#">Prensa</a>
+                    <a href="#">Seguridad</a>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h4>Recursos</h4>
+                    <a href="#">Casos de estudio</a>
+                    <a href="#">Blumen vs otros</a>
+                    <a href="#">Herramientas</a>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h4>Comunidad</h4>
+                    <a href="#">Programa de afiliados</a>
+                    <a href="#">Conviértete en experto</a>
+                    <a href="#">Únete a pruebas</a>
+                    <a href="#">Eventos</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal footer section -->
+        <div class="legal-footer">
+            <div class="container">
+                <div class="legal-footer-content">
+                    <div class="legal-links">
+                        <a href="#">Aviso legal</a>
+                        <a href="#">Términos y condiciones</a>
+                        <a href="#">Privacidad</a>
+                        <a href="#">Reportar un problema</a>
+                    </div>
+                    <div class="copyright">
+                        <span>Powered by</span>
+                        <img src="https://i.ibb.co/Pvb10Fb9/peirum-logo.png" alt="Peirum Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Eliminar la referencia a Google Maps y agregar Mapbox -->
+    <script src="script.js"></script>
+    <script src="datepicker.js"></script>
+    <script src="guests.js"></script>
+    
+    <!-- Mapbox CSS y JS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    
+    <script src="mapbox.js"></script>
+    
+    <!-- Botón de WhatsApp fijo -->
+    <a href="https://wa.me/+56982161327" class="whatsapp-button" target="_blank">
+        <img src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png" alt="WhatsApp">
+    </a>
+</body>
+</html>
